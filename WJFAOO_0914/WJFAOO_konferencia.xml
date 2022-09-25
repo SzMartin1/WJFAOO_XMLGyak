@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konferencia cím="Adatkezelés XML-ben" helyszín="In/103" dátum="2022.09.14.">
+	<hallgatok>
+		<hallgato>
+			<nev>Szabó Martin</nev>
+			<lakcim>Miskolc</lakcim>
+		</hallgato>
+	</hallgatok>
+	<eloado>
+		<nev>Bednarik László</nev>
+		<adoszam>xxxxxxxx</adoszam>
+		<lakcím>Miskolc</lakcím>
+	</eloado>
+</konferencia>
