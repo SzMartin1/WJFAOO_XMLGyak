@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE SzM_kurzusfelvetel SYSTEM "SzM_kurzusfelvetel.dtd">
+
+<SzM_kurzusfelvetel "tanev=2022_2023 I." egyetem="ME">
+
+	<hallgato id="WJFAOO.ME">
+		<hnev>Szabó Martin</hnev>
+		<szulev>2000.11.10.</szulev>
+		<szak evf="5">Programtervező informatikus</szak>
+	</hallgato>
+
+	<kurzusok>
+		<kurzus id="GEIAL332-B">
+			<kurzusnev>Adatkezelés XML környezetben</kurzusnev>
+			<kredit>5</kredit>
+			<hely>XXXII. előadó</hely>
+			<idopont>Kedd 12:00-13:30</idopont>
+			<oktato>Dr. Bednarik László</oktato>
+		</kurzus>
+		<kurzus id="GEIAL322-B" jovahagyas"igen">
+			<kurzusnev>Adatbázisrendszerek I.</kurzusnev>
+			<kredit>5</kredit>
+			<hely>In101</hely>
+			<idopont>Kedd 08:00-09:30</idopont>
+			<oktato>Dr. Kovács László</oktato>
+		</kurzus>
+	</kurzusok>
+
+</SzM_kurzusfelvetel>
