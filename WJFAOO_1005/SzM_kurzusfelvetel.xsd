@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:simpleType name="tanevTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{4}/\d{4}I(I)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="egyetemTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="ME"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idTipus">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="igenNemTipus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="igen"/>
+      <xs:enumeration value="nem"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+<xs:element name="SzM_kurzusfelvetel">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="hallgato">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="hnev" type="xs:string"></xs:element>
+						<xs:element name="szulev" type="xs:string"></xs:element>
+						<xs:element name="szak">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="evf" type="xs:string"></xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="id" type="idTipus"></xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="kurzusok">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="kurzus">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="kurzusnev" type="xs:string"></xs:element>
+									<xs:element name="kredit" type="xs:string"></xs:element>
+									<xs:element name="hely" type="xs:string"></xs:element>
+									<xs:element name="idopont" type="xs:string"></xs:element>
+									<xs:element name="oktato" type="xs:string"></xs:element>
+								</xs:sequence>
+								<xs:attribute name="id" type="idTipus"></xs:attribute>
+								<xs:attribute name="jovahagyas" type="igenNemTipus" use="optional"></xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="tanev" type="tanevTipus"></xs:attribute>
+		<xs:attribute name="egyetem" type="egyetemTipus"></xs:attribute>
+	</xs:complexType>
+</xs:element>
+
+
+
+
+
+</xs:schema>
