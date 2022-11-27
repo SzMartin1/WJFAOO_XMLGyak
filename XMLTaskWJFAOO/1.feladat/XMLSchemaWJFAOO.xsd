@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!-- Egyszerű típusok definiálása -->
+    <!--Jatek_nev egyszerű típusai -->
+    <xs:element name="kieg_nev" type="xs:string"></xs:element>
+    <xs:element name="nyelv" type="xs:string"></xs:element>
+    <xs:element name="kiad_datum" type="xs:string"></xs:element>
+
+    <!-- Szornyek egyszerű típusai -->
+    <xs:element name="ero" type="xs:string"></xs:element>
+    <xs:element name="menekules" type="xs:string"></xs:element>
+    <xs:element name="kincs" type="xs:string"></xs:element>
+    <xs:element name="szint" type="xs:string"></xs:element>
+    <xs:element name="kaszt_ellen" type="xs:string"></xs:element>
+
+    <!-- Kasztok egyszerű típusai -->
+    <xs:element name="kepesseg" type="xs:string"></xs:element>
+    <xs:element name="alap_tul" type="xs:string"></xs:element>
+    <xs:element name="k_nehezseg" type="xs:string"></xs:element>
+
+    <!-- Kasztok egyszerű típusai -->
+    <xs:element name="rossz" type="xs:string"></xs:element>
+    <xs:element name="jo" type="xs:string"></xs:element>
+    <xs:element name="f_nehezseg" type="xs:string"></xs:element>
+
+    <!-- Viseletek egyszerű típusai -->
+    <xs:element name="kaszt_spec" type="xs:string"></xs:element>
+    <xs:element name="fajta" type="xs:string"></xs:element>
+    <xs:element name="bonusz" type="xs:string"></xs:element>
+    <xs:element name="egyedi_tul" type="xs:string"></xs:element>
+
+<!-- Attributumok definiálása -->
+    <xs:attribute name="Jatek_id" type="xs:string" />
+    <xs:attribute name="S_id" type="xs:string" />
+    <xs:attribute name="S_J_id" type="xs:string" />
+    <xs:attribute name="K_id" type="xs:string" />
+    <xs:attribute name="K_J_id" type="xs:string" />
+    <xs:attribute name="F_id" type="xs:string" />
+    <xs:attribute name="V_id" type="xs:string" />
+    <xs:attribute name="F_V_id" type="xs:string" />
+    <xs:attribute name="F_J_id" type="xs:string" />
+    <xs:attribute name="H_F_id" type="xs:string" />
+    <xs:attribute name="H_J_id" type="xs:string" />
+
+<!-- Összetett típusok definiálása -->
+    <!-- Jatek_nev típus -->
+    <xs:complexType name="Jatek_nev_tipus">
+        <xs:sequence>
+            <xs:element ref="kieg_nev"></xs:element>
+            <xs:element ref="nyelv"></xs:element>
+            <xs:element ref="kiad_datum"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="Jatek_id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <!-- Szorny típus -->
+    <xs:complexType name="Szorny_tipus">
+        <xs:sequence>
+            <xs:element ref="ero"></xs:element>
+            <xs:element ref="menekules"></xs:element>
+            <xs:element name="jutalom">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="kincs"></xs:element>
+                        <xs:element ref="szint"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element ref="kaszt_ellen"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="S_id" use="required"></xs:attribute>
+        <xs:attribute ref="S_J_id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <!-- Kaszt típus -->
+    <xs:complexType name="Kaszt_tipus">
+        <xs:sequence>
+            <xs:element ref="kepesseg"></xs:element>
+            <xs:element ref="alap_tul"></xs:element>
+            <xs:element ref="k_nehezseg"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="K_id" use="required"></xs:attribute>
+        <xs:attribute ref="K_J_id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <!-- Faj típus -->
+    <xs:complexType name="Faj_tipus">
+        <xs:sequence>
+            <xs:element name="tulajdonsag">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="rossz"></xs:element>
+                        <xs:element ref="jo"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element ref="f_nehezseg"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="F_id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <!-- Viselet típus -->
+    <xs:complexType name="Viselet_tipus">
+        <xs:sequence>
+            <xs:element ref="kaszt_spec"></xs:element>
+            <xs:element ref="fajta"></xs:element>
+            <xs:element ref="bonusz"></xs:element>
+            <xs:element ref="egyedi_tul"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="V_id" use="required"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="Felszereles_tipus">
+        <xs:attribute ref="F_V_id" use="required"></xs:attribute>
+        <xs:attribute ref="F_J_id" use="required"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="Hovatartozas_tipus">
+        <xs:attribute ref="H_F_id" use="required"></xs:attribute>
+        <xs:attribute ref="H_J_id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <!-- Maga a séma -->
+    <xs:element name="Tarsasjatek">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Jatek_nev" type="Jatek_nev_tipus" maxOccurs="unbounded" />
+                <xs:element name="Szorny" type="Szorny_tipus" maxOccurs="unbounded" />
+                <xs:element name="Kaszt" type="Kaszt_tipus" maxOccurs="unbounded" />
+                <xs:element name="Faj" type="Faj_tipus" maxOccurs="unbounded" />
+                <xs:element name="Viselet" type="Viselet_tipus" maxOccurs="unbounded" />
+                <xs:element name="Felszereles" type="Felszereles_tipus" maxOccurs="unbounded"/>
+                <xs:element name="Hovatartozas" type="Hovatartozas_tipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- Kulcsok -->
+        <xs:key name="Jatek_nev_kulcs">
+            <xs:selector xpath="Jatek_nev"></xs:selector>
+            <xs:field xpath="@Jatek_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="Szorny_kulcs">
+            <xs:selector xpath="Szorny"></xs:selector>
+            <xs:field xpath="@S_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="Kaszt_kulcs">
+            <xs:selector xpath="Kaszt"></xs:selector>
+            <xs:field xpath="@K_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="Faj_kulcs">
+            <xs:selector xpath="Faj"></xs:selector>
+            <xs:field xpath="@F_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="Viselet_kulcs">
+            <xs:selector xpath="Viselet"></xs:selector>
+            <xs:field xpath="@V_id"></xs:field>
+        </xs:key>
+
+        <!-- Idegen kulcsok -->
+        <xs:keyref name="Kaszt_idegen_kulcs" refer="Jatek_nev_kulcs">
+            <xs:selector xpath="Kaszt"></xs:selector>
+            <xs:field xpath="@K_J_id"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="Faj_idegen_kulcs" refer="Faj_kulcs">
+            <xs:selector xpath="Hovatartozas"></xs:selector>
+            <xs:field xpath="@H_F_id"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="Viselet_idegen_kulcs" refer="Viselet_kulcs">
+            <xs:selector xpath="Felszereles"></xs:selector>
+            <xs:field xpath="@F_V_id"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="Felszereles_idegen_kulcs" refer="Jatek_nev_kulcs">
+            <xs:selector xpath="Felszereles"></xs:selector>
+            <xs:field xpath="@F_J_id"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="Hovatartozas_idegen_kulcs" refer="Jatek_nev_kulcs">
+            <xs:selector xpath="Hovatartozas"></xs:selector>
+            <xs:field xpath="@H_J_id"></xs:field>
+        </xs:keyref>
+
+        <!-- 1:1 kapcsolat megvalósítása -->
+        <xs:unique name ="unique_Szorny">
+            <xs:selector xpath="Szorny"></xs:selector>
+            <xs:field xpath="@S_J_id"></xs:field>
+        </xs:unique>
+    </xs:element>
+</xs:schema>
