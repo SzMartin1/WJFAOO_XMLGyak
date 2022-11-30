@@ -1,0 +1,42 @@
+{
+  "_id" : "WJFAOO",
+  "vizsgak":{
+    "vizsga": {
+      "vizsga": [
+        {
+          "kurzus" : "GEIAL-323B",
+          "helyszin": "I. előadó",
+          "idopont" : {
+            "nap" : "Hétfő",
+            "tol" : "10:00",
+            "ig" : "12:00"
+          },
+          "oktato" : "Kalamári Elemér",
+          "jegy" : "5"
+        },
+        {
+          "kurzus" : "GEIAL-303B",
+          "helyszin": "II. előadó",
+          "idopont" : {
+            "nap" : "Kedd",
+            "tol" : "10:00",
+            "ig" : "13:00"
+          },
+          "oktato" : "Compó Cecília",
+          "jegy" : "5"
+        },
+        {
+          "kurzus" : "GEIAL-313A",
+          "helyszin": "III. előadó",
+          "idopont" : {
+            "nap" : "Szerda",
+            "tol" : "10:00",
+            "ig" : "14:00"
+          },
+          "oktato" : "Pop Simon",
+          "jegy" : "4"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet type = "text/xsl" href="autokWJFAOO.xsl"?>
+
+<autok>
+    <auto rsz= "ABC-100">
+        <tipus>Fiat</tipus>
+        <ar>21212</ar>
+        <szin>Piros</szin>
+        <tulaj>
+            <nev>Zoli</nev>
+            <varos>Eger</varos>
+        </tulaj>
+    </auto>
+
+    <auto rsz= "ABC-101">
+        <tipus>Opel</tipus>
+        <ar>32212</ar>
+        <szin>Szurke</szin>
+        <tulaj>
+            <nev>Ákos</nev>
+            <varos>Miskolc</varos>
+        </tulaj>
+    </auto>
+
+    <auto rsz= "ABC-102">
+        <tipus>Skoda</tipus>
+        <ar>213222</ar>
+        <szin>kék</szin>
+        <tulaj>
+            <nev>Csaba</nev>
+            <varos>Zalaegerszeg</varos>
+        </tulaj>
+    </auto>
+
+    <auto rsz= "ABC-103">
+        <tipus>Volkswagen</tipus>
+        <ar>1000000</ar>
+        <szin>Fehér</szin>
+        <tulaj>
+            <nev>Martin</nev>
+            <varos>Miskolc</varos>
+        </tulaj>
+    </auto>
+</autok>

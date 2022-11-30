@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet type = "text/xsl" href="kurzusokWJFAOO.xsl"?>
+<root id="WJFAOO">
+    <vizsgak>
+        <vizsga>
+            <vizsga>
+                <kurzus>GEIAL-323B</kurzus>
+                <helyszin>I. előadó</helyszin>
+                <idopont>
+                    <nap>Hétfő</nap>
+                    <tol>10:00</tol>
+                    <ig>12:00</ig>
+                </idopont>
+                <oktato>Kalamári Elemér</oktato>
+                <jegy>5</jegy>
+            </vizsga>
+            <vizsga>
+                <kurzus>GEIAL-303B</kurzus>
+                <helyszin>II. előadó</helyszin>
+                <idopont>
+                    <nap>Kedd</nap>
+                    <tol>10:00</tol>
+                    <ig>13:00</ig>
+                </idopont>
+                <oktato>Compó Cecília</oktato>
+                <jegy>5</jegy>
+            </vizsga>
+            <vizsga>
+                <kurzus>GEIAL-313A</kurzus>
+                <helyszin>III. előadó</helyszin>
+                <idopont>
+                    <nap>Szerda</nap>
+                    <tol>10:00</tol>
+                    <ig>14:00</ig>
+                </idopont>
+                <oktato>Pop Simon</oktato>
+                <jegy>4</jegy>
+            </vizsga>
+        </vizsga>
+    </vizsgak>
+</root>
