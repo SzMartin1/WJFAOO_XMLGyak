@@ -1,0 +1,15 @@
+kurzus : GEIAL-323B
+helyszin : I. eloado
+idopont : {"nap":"Hetfo","tol":"10:00","ig":"12:00"}
+oktato : Kalamari Elemer
+jegy : 5
+kurzus : GEIAL-303B
+helyszin : II. eloado
+idopont : {"nap":"Kedd","tol":"10:00","ig":"13:00"}
+oktato : Compo Cecilia
+jegy : 5
+kurzus : GEIAL-313A
+helyszin : III. eloado
+idopont : {"nap":"Szerda","tol":"14:00","ig":"16:00"}
+oktato : Pop Simon
+jegy : 4
